@@ -11,7 +11,7 @@ const app = express()
 const server = http.createServer(app) // CREATES A NEW WEBSERVER AND WE PASS THE EXPRESS APP (IF I DONT DO THIS, EXPRESS DOES IT AUTOMATICALLY BEHIND THE SCENES)
 const io = socketio(server)
 
-const port = 4000
+const port = process.env.PORT || 4000
 const publicDirectoryPath = path.join(__dirname, '../public')
 
 app.use(express.static(publicDirectoryPath))
